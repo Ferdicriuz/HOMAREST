@@ -108,23 +108,23 @@ document.getElementById("checkout").addEventListener("click", () => {
     return;
   }
 
-  let message = `*NEW ORDER*%0A`;
-  message += `*Name:* ${name}%0A`;
-  message += `*Phone:* ${phone}%0A`;
-  if (address) message += `*Address:* ${address}%0A`;
+  let message = `
+NEW ORDER
+--------------------------
+Name: ${name}
+Phone: ${phone}
+${address ? "Address: " + address : ""}
+--------------------------
+Items Ordered:
+${cart.map(i => `${i.qty} x ${i.name} - ₦${(i.price * i.qty).toLocaleString()}`).join("\n")}
+--------------------------
+Subtotal: ₦${subtotal.toLocaleString()}
+${deliveryText}
+Total: ₦${total.toLocaleString()}
+${notes ? "\nNotes: " + notes : ""}
+`;
 
-  message += `%0A*Items Ordered:*%0A`;
-  cart.forEach(i => {
-    message += `${i.qty} x ${i.name} - ₦${(i.price * i.qty).toLocaleString()}%0A`;
-  });
-
-  message += `%0A*Subtotal:* ₦${subtotal.toLocaleString()}%0A`;
-  message += `*${deliveryText}*%0A`;
-  message += `*Total:* ₦${total.toLocaleString()}%0A`;
-
-  if (notes) message += `%0A*Notes:* ${notes}`;
-
-  const phoneNumber = "2347035107709"; // Your WhatsApp number
+  const phoneNumber = "2347035107709"; // your WhatsApp number
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank");
 });
