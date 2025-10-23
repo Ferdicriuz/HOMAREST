@@ -1,16 +1,20 @@
 // Define the menu
 const MENU = [
-  { id: 1, name: "Regulare shawarma", price: 3500, desc: "Beef, Chicken, Mix (Two sausaages)" },
-  { id: 2, name: "Full protein shawarma", price: 5500, desc: "Beef, Chicken, Mix (Two sausaages)" },
-  { id: 3, name: "Jumbo shawarma", price: 6000, desc: "Beef, Chicken, Mix (Three sausaages)" },
-  { id: 4, name: "Grilled snails", price: 5000, desc: "Ganished snail, fries with seasoning" },
+  { id: 1, name: "Regular Shawarma", price: 3500, desc: "Beef, Chicken, Mix (Two sausaages)" },
+  { id: 2, name: "Full Protein Shawarma", price: 5500, desc: "Beef, Chicken, Mix (Two sausaages)" },
+  { id: 3, name: "Jumbo Shawarma", price: 6000, desc: "Beef, Chicken, Mix (Three sausaages)" },
+  { id: 4, name: "Grilled Snails", price: 5000, desc: "Ganished snail, fries with seasoning" },
   { id: 4, name: "Asun", price: 4000, desc: "Grilled Goatmeant" },
-  { id: 5, name: "Chicken and fries", price: 5000, desc: "chicken, chips, salad" },
-  { id: 6, name: "Chicken and fries", price: 7000, desc: "chicken, chips, salad" },
+  { id: 5, name: "Chicken and Fries", price: 5000, desc: "chicken, chips, salad" },
+  { id: 6, name: "Chicken and Fries", price: 7000, desc: "chicken, chips, salad" },
   { id: 7, name: "Turkey and Fries", price: 7000, desc: "Turkey, chips, salad" },
-  { id: 8, name: "Grilled catfish", price: 10000, desc: "Ganished, fries, ketchup, salad" },
+  { id: 8, name: "Grilled Catfish", price: 10000, desc: "Ganished, fries, ketchup, salad" },
   { id: 9, name: "Grilled Croacker", price: 15000, desc: "Ganished, fries, ketchup, salad" },
-  { id: 9, name: "Grilled Tilapia", price: 15000, desc: "Ganished, fries, ketchup, salad" },
+  { id: 10, name: "Grilled Tilapia", price: 15000, desc: "Ganished, fries, ketchup, salad" },
+  { id: 11, name: "Mini-Loaded Chinese Fries", price: 10000, desc: "Ganished, fries, ketchup, salad" },
+  { id: 12, name: "Supreme-Loaded Chinese Fries", price: 15000, desc: "Ganished, fries, ketchup, salad" },
+  { id: 13, name: "Loaded Beef and Fries", price: 8000, desc: "Ganished, fries, ketchup, salad" },
+  { id: 14, name: "Loaded Egg-Sauce and Fries", price: 6000, desc: "Ganished, fries, ketchup" },
 ];
 
 let cart = [];
@@ -86,7 +90,7 @@ document.getElementById("checkout").addEventListener("click", () => {
   const address = document.getElementById("address").value;
   const notes = document.getElementById("notes").value;
 
-  let message = `*New Order*:%0A`;
+  let message = `*NEW ORDER*:%0A`;
   if (name) message += `*Name:* ${name}%0A`;
   if (address) message += `*Address:* ${address}%0A`;
 
