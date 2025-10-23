@@ -136,3 +136,4 @@ document.getElementById("clear").addEventListener("click", () => {
 
 renderMenu();
 renderCart();
+
