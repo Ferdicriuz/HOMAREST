@@ -77,7 +77,7 @@ input, textarea {
 .container {
   max-width: 700px;
   background: #fff;
-  margin: 3rem 5rem;
+  margin: 6rem 1rem;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -97,11 +97,11 @@ justify-content: center;
 align-items: center;
 background-color: rgba(0, 0, 0, 0.397);
 min-width: 100vw;
-min-height: 20vh;
+min-height: 10vh;
 }
 
 .logo img{
-  width:70%;
+  width:95%;
   margin: 1rem 0;
 }
 
