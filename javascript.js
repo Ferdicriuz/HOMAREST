@@ -1,4 +1,3 @@
-// Define the menu
 const MENU = [
   { id: 1, name: "Regular Shawarma", price: 3500, desc: "Beef, Chicken, Mix (Two sausages)" },
   { id: 2, name: "Full Protein Shawarma", price: 5500, desc: "Beef, Chicken, Mix (Two sausages)" },
@@ -71,24 +70,9 @@ function renderCart() {
     cartDiv.appendChild(div);
   });
 
-  const tax = Math.round(subtotal * 0.000);
-  const total = subtotal + tax;
-
   document.getElementById("subtotal").innerText = subtotal.toLocaleString();
-  document.getElementById("tax").innerText = tax.toLocaleString();
-  document.getElementById("total").innerText = total.toLocaleString();
-}
-
-// Add delivery dropdown dynamically if not in HTML
-if (!document.getElementById("delivery")) {
-  const deliverySelect = document.createElement("select");
-  deliverySelect.id = "delivery";
-  deliverySelect.innerHTML = `
-    <option value="">Delivery?</option>
-    <option value="yes">Yes (₦1500 within Eagle Island)</option>
-    <option value="no">No (Pickup or negotiate)</option>
-  `;
-  document.querySelector(".container").insertBefore(deliverySelect, document.getElementById("notes"));
+  document.getElementById("tax").innerText = "0";
+  document.getElementById("total").innerText = subtotal.toLocaleString();
 }
 
 document.getElementById("checkout").addEventListener("click", () => {
@@ -112,11 +96,16 @@ document.getElementById("checkout").addEventListener("click", () => {
   let total = subtotal;
   let deliveryText = "";
 
-  if (delivery === "yes") {
+  if (delivery === "within") {
     total += 1500;
-    deliveryText = "✅ Delivery within Eagle Island (₦1500)";
-  } else if (delivery === "no") {
-    deliveryText = "🚚 Delivery to be negotiated.";
+    deliveryText = "🚚 Delivery within Eagle Island (₦1500)";
+  } else if (delivery === "outside") {
+    deliveryText = "🚛 Delivery outside Eagle Island (to be negotiated)";
+  } else if (delivery === "none") {
+    deliveryText = "🏃 Pickup (no delivery)";
+  } else {
+    alert("Please select a delivery option.");
+    return;
   }
 
   let message = `*NEW ORDER*%0A`;
@@ -135,20 +124,14 @@ document.getElementById("checkout").addEventListener("click", () => {
 
   if (notes) message += `%0A*Notes:* ${notes}`;
 
-  const phoneNumber = "2347035107709"; // your WhatsApp number
-  const url = `https://wa.me/${phoneNumber}?text=${message}`;
+  const phoneNumber = "2347035107709"; // Your WhatsApp number
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank");
 });
 
 document.getElementById("clear").addEventListener("click", () => {
   cart = [];
   renderCart();
-});
-
-// Shrink logo on scroll
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 50) document.body.classList.add("scrolled");
-  else document.body.classList.remove("scrolled");
 });
 
 renderMenu();

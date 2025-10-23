@@ -31,11 +31,14 @@
       <input type="text" id="name" placeholder="Your Name" />
       <input type="text" id="phone" placeholder="Please Enter Your Phone Number" />
 
-      <label for="delivery">Delivery?</label>
-      <select id="delivery">
-        <option value="no">No (Pick-up)</option>
-        <option value="yes">Yes (₦1500 within Eagle Island)</option>
-      </select>
+      <h3>Delivery Option</h3>
+<select id="delivery" class="delivery-select">
+  <option value="">-- Select Delivery Option --</option>
+  <option value="within">Delivery within Eagle Island (₦1500)</option>
+  <option value="outside">Delivery outside Eagle Island (negotiated)</option>
+  <option value="none">No Delivery (Pickup)</option>
+</select>
+
 
       <input type="text" id="address" placeholder="Delivery Address / Pick-up Location" />
       <textarea id="notes" placeholder="Notes (optional)"></textarea>
