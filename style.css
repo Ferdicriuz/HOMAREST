@@ -31,7 +31,7 @@ html {
 }
 
 .logo p{
-font-size: 1rem;
+font-size: 1.5rem;
 color: #25d366;
 font-style: italic;
 font-weight: bolder;
@@ -40,7 +40,7 @@ font-family: monospace;
 
 .logo img {
   width: 40%;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   transition: all 0.4s ease;
 }
 
