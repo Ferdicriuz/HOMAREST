@@ -9,10 +9,12 @@ const MENU = [
   { id: 8, name: "Grilled Catfish", price: 10000, desc: "Garnished, fries, ketchup, salad" },
   { id: 9, name: "Grilled Croaker", price: 15000, desc: "Garnished, fries, ketchup, salad" },
   { id: 10, name: "Grilled Tilapia", price: 15000, desc: "Garnished, fries, ketchup, salad" },
-  { id: 11, name: "Mini-Loaded Chinese Fries", price: 10000, desc: "Loaded with toppings and ketchup" },
-  { id: 12, name: "Supreme-Loaded Chinese Fries", price: 15000, desc: "Fully loaded and garnished" },
-  { id: 13, name: "Loaded Beef and Fries", price: 8000, desc: "Beef, fries, salad" },
-  { id: 14, name: "Loaded Egg-Sauce and Fries", price: 6000, desc: "Egg sauce, fries, ketchup" },
+  { id: 11, name: "Mini-Loaded Chinese Fries", price: 8000, desc: "Loaded with toppings and protein (chicken or beef)" },
+  { id: 12, name: "mix-Mini-Loaded Chinese Fries", price: 8000, desc: "Loaded with toppings, chicken and beef" },
+  { id: 13, name: "Supreme-Loaded Chinese Fries", price: 10000, desc: "Fully loaded and garnished with protein, sausage, toppings" },
+  { id: 14, name: "Mix-Supreme-Loaded Chinese Fries", price: 15000, desc: "Fully loaded and garnished with protein, sausage, toppings" },
+  { id: 15, name: "Loaded Beef and Fries", price: 8000, desc: "Fully loaded with Beef,sausage, toppings, fries, salad" },
+  { id: 16, name: "Loaded Egg-Sauce and Fries", price: 6000, desc: "Egg sauce,Beef-toppings fries, ketchup" },
 ];
 
 let cart = [];
@@ -98,11 +100,11 @@ document.getElementById("checkout").addEventListener("click", () => {
 
   if (delivery === "within") {
     total += 1500;
-    deliveryText = "🚚 Delivery within Eagle Island (₦1500)";
+    deliveryText = "🚚 Delivery within Eagle Island (₦1000)";
   } else if (delivery === "outside") {
-    deliveryText = "🚛 Delivery outside Eagle Island (to be negotiated)";
+    deliveryText = "🚛 Delivery outside Eagle Island (negotiable)";
   } else if (delivery === "none") {
-    deliveryText = "🏃 Pickup (no delivery)";
+    deliveryText = "🏃 Pickup by me from store";
   } else {
     alert("Please select a delivery option.");
     return;
