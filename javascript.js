@@ -128,7 +128,7 @@ Total: ₦${total.toLocaleString()}
 ${notes ? "\nNotes: " + notes : ""}
 `;
 
-  const phoneNumber = "2347035107709"; // your WhatsApp number
+  const phoneNumber = "2348067853972"; // your WhatsApp number
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank");
 });
