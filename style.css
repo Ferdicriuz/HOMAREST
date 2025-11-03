@@ -211,4 +211,12 @@ input, textarea, select {
   .logo img { width: 70%; }
   body.scrolled .logo img { width: 35%; }
   .container { width: 95%; padding: 15px; }
+
+  input, textarea, select {
+  width: 80%;
+  margin: 5px 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 }
