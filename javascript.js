@@ -1,7 +1,7 @@
 const MENU = [
   { id: 1, name: "Beef Shawarma", price: 3500, desc: "Beef, veg, juice (Two sausages)" },
-  { id: 2, name: "Chicken Shawarma", price: 3500, desc: "Chicken,  veg, juice (Two sausages)" },
-  { id: 3, name: "Mix Shawarma", price: 4000, desc: "Beef, Chicken, veg, juice(Two sausages)" },
+  { id: 2, name: "Chicken Shawarma", price: 3500, desc: "Chicken, veg, juice (Two sausages)" },
+  { id: 3, name: "Mix Shawarma", price: 4000, desc: "Beef, Chicken, veg, juice (Two sausages)" },
   { id: 4, name: "Full Protein Shawarma", price: 5500, desc: "Beef, Chicken, Mix (Two sausages)" },
   { id: 5, name: "Jumbo Shawarma", price: 6000, desc: "Beef, Chicken, Mix (Three sausages)" },
   { id: 6, name: "Grilled Snails", price: 5000, desc: "Garnished snail, fries with seasoning" },
@@ -15,8 +15,8 @@ const MENU = [
   { id: 14, name: "Mix-Mini-Loaded Chinese Fries", price: 8000, desc: "Loaded with toppings, chicken and beef" },
   { id: 15, name: "Supreme-Loaded Chinese Fries", price: 10000, desc: "Fully loaded and garnished with protein, sausage, toppings" },
   { id: 16, name: "Mix-Supreme-Loaded Chinese Fries", price: 15000, desc: "Fully loaded and garnished with protein, sausage, toppings" },
-  { id: 17, name: "Loaded Beef and Fries", price: 8000, desc: "Fully loaded with Beef,sausage, toppings, fries, salad" },
-  { id: 18, name: "Loaded Egg-Sauce and Fries", price: 6000, desc: "Egg sauce,Beef-toppings fries, ketchup" },
+  { id: 17, name: "Loaded Beef and Fries", price: 8000, desc: "Fully loaded with Beef, sausage, toppings, fries, salad" },
+  { id: 18, name: "Loaded Egg-Sauce and Fries", price: 6000, desc: "Egg sauce, Beef-toppings fries, ketchup" },
 ];
 
 let cart = [];
@@ -41,17 +41,58 @@ function renderMenu() {
 
 function addToCart(id) {
   const item = MENU.find(i => i.id === id);
-  const existing = cart.find(i => i.id === id);
-  if (existing) existing.qty++;
-  else cart.push({ ...item, qty: 1 });
+  if (!item) return;
+
+  let extraSausages = 0;
+  let extraChips = 0;
+
+  const lowerName = item.name.toLowerCase();
+
+  // Shawarma prompt
+  if (lowerName.includes("shawarma")) {
+    const input = prompt("Add extra sausages? ₦500 each. Enter quantity (0 for none):", "0");
+    if (input === null) return; // user canceled
+    extraSausages = parseInt(input) || 0;
+    if (extraSausages < 0) extraSausages = 0;
+  }
+
+  // Fries prompt
+  if (lowerName.includes("fries")) {
+    const chipsInput = prompt("Add extra chips (fries)? ₦1000 per portion. Enter quantity (0 for none):", "0");
+    if (chipsInput === null) return;
+    extraChips = parseInt(chipsInput) || 0;
+    if (extraChips < 0) extraChips = 0;
+  }
+
+  const existing = cart.find(i =>
+    i.id === id &&
+    i.extraSausages === extraSausages &&
+    i.extraChips === extraChips
+  );
+
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ ...item, qty: 1, extraSausages, extraChips });
+  }
+
   renderCart();
 }
 
-function changeQty(id, delta) {
-  const item = cart.find(i => i.id === id);
+function changeQty(id, delta, extraSausages = 0, extraChips = 0) {
+  const item = cart.find(i =>
+    i.id === id &&
+    i.extraSausages === extraSausages &&
+    i.extraChips === extraChips
+  );
   if (!item) return;
+
   item.qty += delta;
-  if (item.qty <= 0) cart = cart.filter(i => i.id !== id);
+  if (item.qty <= 0) {
+    cart = cart.filter(i =>
+      !(i.id === id && i.extraSausages === extraSausages && i.extraChips === extraChips)
+    );
+  }
   renderCart();
 }
 
@@ -59,16 +100,26 @@ function renderCart() {
   const cartDiv = document.getElementById("cart");
   cartDiv.innerHTML = "";
   let subtotal = 0;
+
   cart.forEach(item => {
-    subtotal += item.price * item.qty;
+    const sausageCost = item.extraSausages * 500;
+    const chipsCost = item.extraChips * 1000;
+    const itemTotal = (item.price + sausageCost + chipsCost) * item.qty;
+    subtotal += itemTotal;
+
     const div = document.createElement("div");
     div.className = "cart-item";
+
     div.innerHTML = `
-      <div>${item.name} (₦${item.price.toLocaleString()})</div>
       <div>
-        <button onclick="changeQty(${item.id}, -1)">-</button>
+        ${item.name} (₦${item.price.toLocaleString()})
+        ${item.extraSausages > 0 ? `<br><small>+ ${item.extraSausages} extra sausage(s) (₦${(item.extraSausages * 500).toLocaleString()})</small>` : ""}
+        ${item.extraChips > 0 ? `<br><small>+ ${item.extraChips} extra chips portion(s) (₦${(item.extraChips * 1000).toLocaleString()})</small>` : ""}
+      </div>
+      <div>
+        <button onclick="changeQty(${item.id}, -1, ${item.extraSausages}, ${item.extraChips})">-</button>
         ${item.qty}
-        <button onclick="changeQty(${item.id}, 1)">+</button>
+        <button onclick="changeQty(${item.id}, 1, ${item.extraSausages}, ${item.extraChips})">+</button>
       </div>
     `;
     cartDiv.appendChild(div);
@@ -96,7 +147,7 @@ document.getElementById("checkout").addEventListener("click", () => {
     return;
   }
 
-  let subtotal = parseInt(document.getElementById("subtotal").innerText.replace(/,/g, ""));
+  let subtotal = parseInt(document.getElementById("subtotal").innerText.replace(/,/g, "")) || 0;
   let total = subtotal;
   let deliveryText = "";
 
@@ -112,15 +163,24 @@ document.getElementById("checkout").addEventListener("click", () => {
     return;
   }
 
-  let message = `
-NEW ORDER
+  const message = 
+`NEW ORDER
 --------------------------
 Name: ${name}
 Phone: ${phone}
 ${address ? "Address: " + address : ""}
 --------------------------
 Items Ordered:
-${cart.map(i => `${i.qty} x ${i.name} - ₦${(i.price * i.qty).toLocaleString()}`).join("\n")}
+${cart.map(i => {
+  const sausageCost = i.extraSausages * 500;
+  const chipsCost = i.extraChips * 1000;
+  const itemTotal = (i.price + sausageCost + chipsCost) * i.qty;
+  return `${i.qty} x ${i.name}${
+    i.extraSausages > 0 ? ` (+${i.extraSausages} sausage${i.extraSausages > 1 ? "s" : ""})` : ""
+  }${
+    i.extraChips > 0 ? ` (+${i.extraChips} chips portion${i.extraChips > 1 ? "s" : ""})` : ""
+  } - ₦${itemTotal.toLocaleString()}`
+}).join("\n")}
 --------------------------
 Subtotal: ₦${subtotal.toLocaleString()}
 ${deliveryText}
@@ -140,4 +200,3 @@ document.getElementById("clear").addEventListener("click", () => {
 
 renderMenu();
 renderCart();
-
