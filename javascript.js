@@ -31,7 +31,7 @@ function renderMenu() {
       <div>
         <strong>${item.name}</strong><br>
         <small>${item.desc}</small><br>
-        💰 ₦${item.price.toLocaleString()}
+        ₦${item.price.toLocaleString()}
       </div>
       <button onclick="addToCart(${item.id})">🛒 Add</button>
     `;
