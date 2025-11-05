@@ -31,7 +31,7 @@ function renderMenu() {
       <div>
         <strong>${item.name}</strong><br>
         <small>${item.desc}</small><br>
-        ₦${item.price.toLocaleString()}
+         ₦${item.price.toLocaleString()}
       </div>
       <button onclick="addToCart(${item.id})">🛒 Add</button>
     `;
@@ -113,7 +113,7 @@ function renderCart() {
     div.innerHTML = `
       <div>
         ${item.name} <br>
-        💰 ₦${item.price.toLocaleString()}
+         ₦${item.price.toLocaleString()}
         ${item.extraSausages > 0 ? `<br><small>🥖 +${item.extraSausages} sausage(s) (₦${(item.extraSausages * 500).toLocaleString()})</small>` : ""}
         ${item.extraChips > 0 ? `<br><small>🍟 +${item.extraChips} chips portion(s) (₦${(item.extraChips * 1000).toLocaleString()})</small>` : ""}
       </div>
