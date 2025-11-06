@@ -201,6 +201,8 @@ document.getElementById("clear").addEventListener("click", () => {
 
 renderMenu();
 renderCart();
+
+
 // ----------------------------
 // CUSTOMER CARE WIDGET
 // ----------------------------
@@ -223,7 +225,7 @@ careBtn.addEventListener("click", () => {
 
 document.querySelectorAll(".option-btn").forEach(btn => {
   btn.addEventListener("click", () => {
-    selectedType = btn.dataset.type;
+    selectedType = btn.dataset.type; // "Complain" or "Review"
     formTitle.innerText = `${selectedType} Form`;
     careOptions.classList.add("hidden");
     careForm.classList.remove("hidden");
@@ -246,16 +248,14 @@ submitCare.addEventListener("click", () => {
     return;
   }
 
-  // ✅ Create subject that includes user email
-  const subject = selectedType === "Complain"
-    ? `Customer Complain from ${email}`
-    : `Customer Review from ${email}`;
+  // ✅ Subject is now just "Complain" or "Review"
+  const subject = selectedType;
 
-  // ✅ Body now only contains the message
-  const body = message;
+  // ✅ Body includes email and message content
+  const body = `Customer Email: ${email}\n\n${message}`;
 
   // Open default email app with prefilled details
-  const mailto = `mailto:homagrills@gmail.com?from=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const mailto = `mailto:homagrills@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   window.location.href = mailto;
 
   // Reset form
