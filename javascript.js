@@ -201,7 +201,6 @@ document.getElementById("clear").addEventListener("click", () => {
 
 renderMenu();
 renderCart();
-
 // ----------------------------
 // CUSTOMER CARE WIDGET
 // ----------------------------
@@ -247,8 +246,13 @@ submitCare.addEventListener("click", () => {
     return;
   }
 
-  const subject = selectedType === "Complain" ? "Customer Complain" : "Customer Review";
-  const body = `\n${message}`;
+  // ✅ Create subject that includes user email
+  const subject = selectedType === "Complain"
+    ? `Customer Complain from ${email}`
+    : `Customer Review from ${email}`;
+
+  // ✅ Body now only contains the message
+  const body = message;
 
   // Open default email app with prefilled details
   const mailto = `mailto:homagrills@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
