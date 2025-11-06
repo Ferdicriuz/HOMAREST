@@ -252,7 +252,7 @@ submitCare.addEventListener("click", () => {
   const subject = selectedType;
 
   // ✅ Body includes email and message content
-  const body = `Customer Email: ${email}\n\n${message}`;
+  const body = `${message}`;
 
   // Open default email app with prefilled details
   const mailto = `mailto:homagrills@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
