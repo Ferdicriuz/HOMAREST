@@ -196,7 +196,6 @@ input, textarea, select {
   border-color: #25d366;
   outline: none;
 }
-
 /* ----------------------------
    CUSTOMER CARE FLOATING WIDGET
 ----------------------------- */
@@ -214,15 +213,28 @@ input, textarea, select {
   background: #25d366;
   color: #fff;
   border: none;
-  border-radius: 50px;
-  font-size: 2rem;
+  border-radius: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   transition: background 0.3s;
+  animation: blinkPulse 1.5s infinite; /* 💡 blinking effect */
 }
 
 #careBtn:hover {
   background: #128c7e;
+}
+
+/* 🔁 Keyframes for blinking */
+@keyframes blinkPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.05);
+  }
 }
 
 .care-options {
@@ -288,7 +300,6 @@ input, textarea, select {
 .hidden {
   display: none;
 }
-
 
 /* ----------------------------
    RESPONSIVE DESIGN
