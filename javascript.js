@@ -255,7 +255,7 @@ submitCare.addEventListener("click", () => {
   const body = message;
 
   // Open default email app with prefilled details
-  const mailto = `mailto:homagrills@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const mailto = `mailto:homagrills@gmail.com?from=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   window.location.href = mailto;
 
   // Reset form
