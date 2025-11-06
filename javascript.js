@@ -238,8 +238,9 @@ cancelCare.addEventListener("click", () => {
   // ✅ Resume blinking when user cancels
   careBtn.style.animation = "blinkPulse 1.5s infinite";
 });
+submitCare.addEventListener("click", (event) => {
+  event.preventDefault(); // 🚫 Stop form from refreshing the page
 
-submitCare.addEventListener("click", () => {
   const email = document.getElementById("careEmail").value.trim();
   const message = document.getElementById("careMessage").value.trim();
 
@@ -248,13 +249,13 @@ submitCare.addEventListener("click", () => {
     return;
   }
 
-  // ✅ Subject is now just "Complain" or "Review"
+  // ✅ Subject now only shows the selected type ("Complain" or "Review")
   const subject = selectedType;
 
-  // ✅ Body includes email and message content
-  const body = `${message}`;
+  // ✅ Email body includes user's email and message
+  const body = `Customer Email: ${email}\n\n${message}`;
 
-  // Open default email app with prefilled details
+  // Open default email app
   const mailto = `mailto:homagrills@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   window.location.href = mailto;
 
