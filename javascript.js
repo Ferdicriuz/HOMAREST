@@ -9,14 +9,15 @@ const MENU = [
   { id: 8, name: "Chicken and Fries 🍗🍟", price: 5000, desc: "Chicken, chips, salad" },
   { id: 9, name: "Turkey and Fries 🦃🍟", price: 7000, desc: "Turkey, chips, salad" },
   { id: 10, name: "Grilled Catfish 🐟", price: 10000, desc: "Garnished, fries, ketchup, salad" },
-  { id: 11, name: "Grilled Croaker 🐠", price: 15000, desc: "Garnished, fries, ketchup, salad" },
-  { id: 12, name: "Grilled Tilapia 🐡", price: 15000, desc: "Garnished, fries, ketchup, salad" },
-  { id: 13, name: "Mini-Loaded Chinese Fries 🍟", price: 6000, desc: "Loaded with toppings and protein (chicken or beef)" },
-  { id: 14, name: "Mix-Mini-Loaded Chinese Fries 🍟", price: 8000, desc: "Loaded with toppings, chicken and beef" },
-  { id: 15, name: "Supreme-Loaded Chinese Fries 🍟", price: 10000, desc: "Fully loaded with protein, sausage, toppings" },
-  { id: 16, name: "Mix-Supreme-Loaded Chinese Fries 🍟", price: 15000, desc: "Fully loaded and garnished with protein, sausage, toppings" },
-  { id: 17, name: "Loaded Beef and Fries 🥩🍟", price: 8000, desc: "Fully loaded with Beef, sausage, toppings, fries, salad" },
-  { id: 18, name: "Loaded Egg-Sauce and Fries 🍳🍟", price: 6000, desc: "Egg sauce, Beef-toppings fries, ketchup" },
+  { id: 11, name: "Grilled Catfish 🐟", price: 12000, desc: "Garnished, fries, ketchup, salad" },
+  { id: 12, name: "Grilled Croaker 🐠", price: 15000, desc: "Garnished, fries, ketchup, salad" },
+  { id: 13, name: "Grilled Tilapia 🐡", price: 15000, desc: "Garnished, fries, ketchup, salad" },
+  { id: 14, name: "Mini-Loaded Chinese Fries 🍟", price: 6000, desc: "Loaded with toppings and protein (chicken or beef)" },
+  { id: 15, name: "Mix-Mini-Loaded Chinese Fries 🍟", price: 8000, desc: "Loaded with toppings, chicken and beef" },
+  { id: 16, name: "Supreme-Loaded Chinese Fries 🍟", price: 10000, desc: "Fully loaded with protein, sausage, toppings" },
+  { id: 17, name: "Mix-Supreme-Loaded Chinese Fries 🍟", price: 15000, desc: "Fully loaded and garnished with protein, sausage, toppings" },
+  { id: 18, name: "Loaded Beef and Fries 🥩🍟", price: 8000, desc: "Fully loaded with Beef, sausage, toppings, fries, salad" },
+  { id: 19, name: "Loaded Egg-Sauce and Fries 🍳🍟", price: 6000, desc: "Egg sauce, Beef-toppings fries, ketchup" },
 ];
 
 let cart = [];
@@ -183,9 +184,9 @@ ${cart.map(i => {
   } - ₦${itemTotal.toLocaleString()}`;
 }).join("\n")}
 --------------------------
-💵 Subtotal: ₦${subtotal.toLocaleString()}
+Subtotal: ₦${subtotal.toLocaleString()}
 ${deliveryText}
-💰 Total: ₦${total.toLocaleString()}
+Total: ₦${total.toLocaleString()}
 ${notes ? "\n📝 Notes: " + notes : ""}
 `;
 
