@@ -160,6 +160,7 @@ text-align: center;
 ----------------------------- */
 .social-links {
   width: 100vw;
+  height: auto;
   background-color: #ffffff54;
   text-align: center;
   padding: 10px 0;
@@ -342,7 +343,7 @@ text-align: center;
     .logo img { width: 70%; }
   body.scrolled .logo img { width: 35%; }
   .container { width: 95%; padding: 15px; }
-  
+
   .item-card {
     min-width: 90%;        /* single column on tiny screens */
   }
