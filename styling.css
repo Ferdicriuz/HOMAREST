@@ -129,6 +129,7 @@ body.scrolled .logo img {
   scroll-snap-align: start;
 }
 
+
 .item-card img {
   width: 100%;
   height: 80%;
@@ -334,6 +335,18 @@ text-align: center;
   .item-card img {
     height: 150px;         /* smaller images on small screens */
   }
+
+  .item-card {
+    justify-content: center;
+  width: 25rem;
+  height: 35rem;
+}
+
+.item-card img {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
 }
 
 
@@ -346,6 +359,9 @@ text-align: center;
 
   .item-card {
     min-width: 90%;        /* single column on tiny screens */
+  }
+  .social-links {
+    margin-top: 10rem;
   }
 }
 
