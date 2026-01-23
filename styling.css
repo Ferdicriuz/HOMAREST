@@ -314,6 +314,11 @@ text-align: center;
 }
 
 @media (max-width: 768px) {
+
+    .logo img { width: 60%; }
+  body.scrolled .logo img { width: 30%; }
+  .container { width: 90%; }
+
   .items.grid {
     flex-wrap: wrap;       /* wrap items instead of scrolling horizontally */
     overflow-x: hidden;    /* hide horizontal scroll */
@@ -330,7 +335,14 @@ text-align: center;
   }
 }
 
+
+
 @media (max-width: 420px) {
+
+    .logo img { width: 70%; }
+  body.scrolled .logo img { width: 35%; }
+  .container { width: 95%; padding: 15px; }
+  
   .item-card {
     min-width: 90%;        /* single column on tiny screens */
   }
