@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Restaurant Order via WhatsApp</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styling.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -14,48 +14,148 @@
     <p>A Tasty Bite to Crave</p>
   </div>
 
-  <div class="over">
-    <div class="container">
-      <h1>🍕 Restaurant Menu</h1>
-      <div id="menu" class="menu"></div>
+ <!-- Category Section -->
+<section class="categories">
+  <h2>Choose a Category</h2>
 
-      <h2>Your Order</h2>
-      <div id="cart" class="cart"></div>
+  <!-- SHAWARMA -->
+ <div class="category-card" data-target="shawarma">
+  <i class="fa fa-leaf"></i>
+  <span>Shawarma</span>
+</div>
 
-      <div class="summary">
-        <p>Subtotal: ₦<span id="subtotal">0</span></p>
-        <p>Tax (7.5%): ₦<span id="tax">0</span></p>
-        <p id="delivery-fee-text" style="display:none;">Delivery Fee: ₦<span id="delivery-fee">1500</span></p>
-        <p><strong>Total: ₦<span id="total">0</span></strong></p>
-      </div>
-
-      <input type="text" id="name" placeholder="Your Name" />
-      <input type="text" id="phone" placeholder="Please Enter Your Phone Number" />
-
-      <h3>Delivery Option</h3>
-<select id="delivery" class="delivery-select">
-  <option value="">-- Select Delivery Option --</option>
-  <option value="within">Delivery within Eagle Island (₦1000)</option>
-  <option value="outside">Delivery outside Eagle Island (negotiable)</option>
-  <option value="none">Store Pick-up</option>
-</select>
-
-
-      <input type="text" id="address" placeholder="Delivery Address / Pick-up Location" />
-      <textarea id="notes" placeholder="Notes (optional)"></textarea>
-
-      <button id="checkout">Checkout via WhatsApp</button>
-      <button id="clear">Clear Cart</button>
-
-      <p class="notice">
-        <i>
-          Dear Valued Customer, please complete your payment to initiate your order.
-          Once payment is received, your order will be processed promptly,
-          and you will receive a confirmation upon its completion.
-        </i>
-      </p>
+  <div id="shawarma" class="items grid">
+    <div class="item-card">
+      <img src="images/beef-shawarma.jpg" alt="Beef Shawarma">
+      <p>Beef Shawarma</p>
+    </div>
+    <div class="item-card">
+      <img src="images/chicken-shawarma.jpg" alt="Chicken Shawarma">
+      <p>Chicken Shawarma</p>
+    </div>
+    <div class="item-card">
+      <img src="images/mix-shawarma.jpg" alt="Mix Shawarma">
+      <p>Mix Shawarma</p>
+    </div>
+    <div class="item-card">
+      <img src="images/full-protein-shawarma.jpg" alt="Full Protein Shawarma">
+      <p>Full Protein Shawarma</p>
+    </div>
+    <div class="item-card">
+      <img src="images/jumbo-shawarma.jpg" alt="Jumbo Shawarma">
+      <p>Jumbo Shawarma </p>
     </div>
   </div>
+
+  <!-- GRILLS & BBQ -->
+  <div class="category-card" data-target="grills">
+    <i class="fa fa-fire"></i>
+    <span>Grills & BBQ</span>
+  </div>
+  <div id="grills" class="items grid">
+    <div class="item-card">
+      <img src="images/grilled-snails.jpg" alt="Grilled Snails">
+      <p>Grilled Snails </p>
+    </div>
+
+    <div class="item-card">
+      <img src="images/snails-fries.jpg" alt="Grilled Snails">
+      <p>Grilled Snails and fries</p>
+    </div>
+
+    <div class="item-card">
+      <img src="images/Asun-fries.jpg" alt="Asun">
+      <p>Loaded Asun with fries</p>
+    </div>
+
+     <div class="item-card">
+      <img src="images/asun.jpg" alt="Asun">
+      <p>Asun</p>
+    </div>
+
+
+     <div class="item-card">
+      <img src="images/grilled-pwrans.jpg" alt="Asun">
+      <p>Amazing Grilled Shrimp</p>
+    </div>
+  </div>
+
+  <!-- PROTEIN & FRIES -->
+  <div class="category-card"  data-target="combos">
+    <i class="fa fa-cutlery"></i>
+    <span>Protein & Fries</span>
+  </div>
+  <div id="combos" class="items grid">
+    <div class="item-card">
+      <img src="images/chicken-fries.jpg" alt="Chicken and Fries">
+      <p>Chicken & Fries </p>
+    </div>
+    <div class="item-card">
+      <img src="images/turkey-fries.jpg" alt="Turkey and Fries">
+      <p>Turkey & Fries </p>
+    </div>
+    <div class="item-card">
+      <img src="images/loaded-beef-fries.jpg" alt="Loaded Beef and Fries">
+      <p>Loaded Beef & Fries </p>
+    </div>
+    <div class="item-card">
+      <img src="images/egg-sauce-fries.jpg" alt="Egg Sauce and Fries">
+      <p>Egg Sauce & Fries </p>
+    </div>
+  </div>
+
+  <!-- GRILLED FISH -->
+  <div class="category-card"  data-target="fish">
+    <i class="fa fa-anchor"></i>
+    <span>Grilled Fish</span>
+  </div>
+  <div id="fish" class="items grid">
+    <div class="item-card">
+      <img src="images/grilled-catfish.jpg" alt="Grilled Catfish">
+      <p>Grilled Catfish</p>
+    </div>
+    <div class="item-card">
+      <img src="images/Chicken Skewers.jpg" alt="Large Grilled Catfish">
+      <p>Chicken Skewers</p>
+    </div>
+    <div class="item-card">
+      <img src="images/grilled-croaker.jpg" alt="Grilled Croaker">
+      <p>Grilled Croaker </p>
+    </div>
+    <div class="item-card">
+      <img src="images/grilled-tilapia.jpg" alt="Grilled Tilapia">
+      <p>Grilled Tilapia </p>
+    </div>
+  </div>
+
+  <!-- LOADED CHINESE FRIES -->
+  <div class="category-card"  data-target="loadedfries">
+    <i class="fa fa-star"></i>
+    <span>Loaded Chinese Fries</span>
+  </div>
+  <div id="loadedfries" class="items grid">
+    <div class="item-card">
+      <img src="images/mini-loaded-fries.jpg" alt="Mini Loaded Fries">
+      <p>Mini Loaded Chinese Fries</p>
+    </div>
+    <div class="item-card">
+      <img src="images/mix-mini-loaded-fries.jpg" alt="Mix Mini Loaded Fries">
+      <p>Mix Mini Loaded Chinese Fries </p>
+    </div>
+    <div class="item-card">
+      <img src="images/supreme-loaded-fries.jpg" alt="Supreme Loaded Fries">
+      <p>Supreme Loaded Chinese Fries</p>
+    </div>
+    <div class="item-card">
+      <img src="images/mix-supreme-loaded-fries.jpg" alt="Mix Supreme Loaded Fries">
+      <p>Mix Supreme Loaded Chinese Fries</p>
+    </div>
+  </div>
+</section>
+
+<section class="orders">
+    <a href="Order.html">Order Now</a>
+</section>
 
 <!-- Customer Care Floating Button -->
 <div class="customer-care">
@@ -75,7 +175,7 @@
 </div>
 
 
-  <!-- Social Icons -->
+<!-- Social Icons -->
   <footer class="social-links">
     <h3>Follow Us</h3>
     <a href="https://www.facebook.com/profile.php?id=100083109267401&mibextid=ZbWKwL" target="_blank" class="social-icon facebook"><i class="fa fa-facebook"></i></a>
@@ -83,6 +183,119 @@
     <a href="https://wa.me/2347035107709" target="_blank" class="social-icon whatsapp"><i class="fa fa-whatsapp"></i></a>
   </footer>
 
-  <script src="javascript.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const categoryCards = document.querySelectorAll('.category-card');
+  const itemsSections = document.querySelectorAll('.items');
+
+  // Ensure all sections are closed on page load
+  itemsSections.forEach(section => section.style.display = 'none');
+
+  // Add click listener to each category card
+  categoryCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const targetId = card.getAttribute('data-target');
+      const targetSection = document.getElementById(targetId);
+
+      // Close all other sections
+      itemsSections.forEach(section => {
+        if (section !== targetSection) section.style.display = 'none';
+      });
+
+      // Toggle clicked section
+      targetSection.style.display = (targetSection.style.display === 'flex') ? 'none' : 'flex';
+    });
+  });
+});
+
+
+
+// ----------------------------
+// CUSTOMER CARE WIDGET
+// ----------------------------
+const careBtn = document.getElementById("careBtn");
+const careOptions = document.getElementById("careOptions");
+const careForm = document.getElementById("careForm");
+const formTitle = document.getElementById("formTitle");
+const submitCare = document.getElementById("submitCare");
+const cancelCare = document.getElementById("cancelCare");
+
+let selectedType = "";
+
+careBtn.addEventListener("click", () => {
+  careOptions.classList.toggle("hidden");
+  careForm.classList.add("hidden");
+
+  // 🛑 Stop blinking after first click
+  careBtn.style.animation = "none";
+});
+
+document.querySelectorAll(".option-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    selectedType = btn.dataset.type; // "Complain" or "Review"
+    formTitle.innerText = `${selectedType} Form`;
+    careOptions.classList.add("hidden");
+    careForm.classList.remove("hidden");
+  });
+});
+
+cancelCare.addEventListener("click", () => {
+  careForm.classList.add("hidden");
+
+  // ✅ Resume blinking when user cancels
+  careBtn.style.animation = "blinkPulse 1.5s infinite";
+});
+submitCare.addEventListener("click", (event) => {
+  event.preventDefault(); // 🚫 Stop form from refreshing the page
+
+  const email = document.getElementById("careEmail").value.trim();
+  const message = document.getElementById("careMessage").value.trim();
+
+  if (!email || !message) {
+    alert("Please fill in all fields.");
+    return;
+  }
+
+  // ✅ Subject now only shows the selected type ("Complain" or "Review")
+  const subject = selectedType;
+
+  // ✅ Email body includes user's email and message
+  const body = `${message}`;
+
+  // Open default email app
+  const mailto = `mailto:homagrills@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailto;
+
+  // Reset form
+  document.getElementById("careEmail").value = "";
+  document.getElementById("careMessage").value = "";
+  careForm.classList.add("hidden");
+
+  // ✅ Resume blinking after submit
+  careBtn.style.animation = "blinkPulse 1.5s infinite";
+});
+
+
+  function toggleItems(id) {
+    const section = document.getElementById(id);
+
+    // Check current state
+    const isOpen = section.style.display === "flex";
+
+    // Close all sections first
+    document.querySelectorAll('.items').forEach(item => {
+      item.style.display = "none";
+    });
+
+    // If it was closed, open it
+    if (!isOpen) {
+      section.style.display = "flex";
+    }
+  }
+
+</script>
+
+
+
 </body>
 </html>

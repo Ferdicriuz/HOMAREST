@@ -268,3 +268,21 @@ submitCare.addEventListener("click", (event) => {
   // ✅ Resume blinking after submit
   careBtn.style.animation = "blinkPulse 1.5s infinite";
 });
+
+
+  function toggleItems(id) {
+    const section = document.getElementById(id);
+
+    // Check current state
+    const isOpen = section.style.display === "flex";
+
+    // Close all sections first
+    document.querySelectorAll('.items').forEach(item => {
+      item.style.display = "none";
+    });
+
+    // If it was closed, open it
+    if (!isOpen) {
+      section.style.display = "flex";
+    }
+  }

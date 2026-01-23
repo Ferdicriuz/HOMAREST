@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restaurant Order via WhatsApp</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <!-- Fixed Logo -->
+  <div class="logo">
+    <img src="WhatsApp Image 2025-10-23 at 03.30.14_f75b7695.jpg" alt="Restaurant Logo" />
+    <p>A Tasty Bite to Crave</p>
+  </div>
+
+  <div class="over">
+    <div class="container">
+      <h1>🍕 Restaurant Menu</h1>
+      <div id="menu" class="menu"></div>
+
+      <h2>Your Order</h2>
+      <div id="cart" class="cart"></div>
+
+      <div class="summary">
+        <p>Subtotal: ₦<span id="subtotal">0</span></p>
+        <p>Tax (7.5%): ₦<span id="tax">0</span></p>
+        <p id="delivery-fee-text" style="display:none;">Delivery Fee: ₦<span id="delivery-fee">1500</span></p>
+        <p><strong>Total: ₦<span id="total">0</span></strong></p>
+      </div>
+
+      <input type="text" id="name" placeholder="Your Name" />
+      <input type="text" id="phone" placeholder="Please Enter Your Phone Number" />
+
+      <h3>Delivery Option</h3>
+<select id="delivery" class="delivery-select">
+  <option value="">-- Select Delivery Option --</option>
+  <option value="within">Delivery within Eagle Island (₦1000)</option>
+  <option value="outside">Delivery outside Eagle Island (negotiable)</option>
+  <option value="none">Store Pick-up</option>
+</select>
+
+
+      <input type="text" id="address" placeholder="Delivery Address / Pick-up Location" />
+      <textarea id="notes" placeholder="Notes (optional)"></textarea>
+
+      <button id="checkout">Checkout via WhatsApp</button>
+      <button id="clear">Clear Cart</button>
+
+      <p class="notice">
+        <i>
+          Dear Valued Customer, please complete your payment to initiate your order.
+          Once payment is received, your order will be processed promptly,
+          and you will receive a confirmation upon its completion.
+        </i>
+      </p>
+    </div>
+  </div>
+
+<!-- Customer Care Floating Button -->
+<div class="customer-care">
+  <button id="careBtn">💬</button>
+  <div id="careOptions" class="care-options hidden">
+    <button class="option-btn" data-type="Complain">😠 Complain</button>
+    <button class="option-btn" data-type="Review">⭐ Review</button>
+  </div>
+
+  <div id="careForm" class="care-form hidden">
+    <h3 id="formTitle"></h3>
+    <input type="email" id="careEmail" placeholder="Your Email" required />
+    <textarea id="careMessage" placeholder="Write your message..." required></textarea>
+    <button id="submitCare" type="button">📩 Submit</button>
+    <button id="cancelCare">❌ Cancel</button>
+  </div>
+</div>
+
+
+  <!-- Social Icons -->
+  <footer class="social-links">
+    <h3>Follow Us</h3>
+    <a href="https://www.facebook.com/profile.php?id=100083109267401&mibextid=ZbWKwL" target="_blank" class="social-icon facebook"><i class="fa fa-facebook"></i></a>
+    <a href="https://www.instagram.com/homagrills?igsh=MWU2a21lamM0cW5pOA==" target="_blank" class="social-icon instagram"><i class="fa fa-instagram"></i></a>
+    <a href="https://wa.me/2347035107709" target="_blank" class="social-icon whatsapp"><i class="fa fa-whatsapp"></i></a>
+  </footer>
+
+  <script src="javascript.js"></script>
+</body>
+</html>
