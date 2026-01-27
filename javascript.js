@@ -286,3 +286,40 @@ submitCare.addEventListener("click", (event) => {
       section.style.display = "flex";
     }
   }
+
+
+  // Hamburger toggle
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+  navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+});
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const categoryCards = document.querySelectorAll('.category-card');
+  const itemsSections = document.querySelectorAll('.items');
+
+  // Ensure all sections are closed on page load
+  itemsSections.forEach(section => section.style.display = 'none');
+
+  // Add click listener to each category card
+  categoryCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const targetId = card.getAttribute('data-target');
+      const targetSection = document.getElementById(targetId);
+
+      // Close all other sections
+      itemsSections.forEach(section => {
+        if (section !== targetSection) section.style.display = 'none';
+      });
+
+      // Toggle clicked section
+      targetSection.style.display = (targetSection.style.display === 'flex') ? 'none' : 'flex';
+    });
+  });
+});

@@ -8,154 +8,300 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <!-- Fixed Logo -->
+  <!-- Add this in <head> if FA not already included -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+<header class="navbar">
+  <!-- Logo -->
   <div class="logo">
     <img src="WhatsApp Image 2025-10-23 at 03.30.14_f75b7695.jpg" alt="Restaurant Logo" />
-    <p>A Tasty Bite to Crave</p>
   </div>
 
- <!-- Category Section -->
-<section class="categories">
-  <h2>Choose a Category</h2>
+  <!-- Navigation Links -->
+  <nav class="mobile-nav" id="mobileNav">
+  <button class="close-menu" id="closeMenu">&times;</button>
+  <a href="#">Home</a>
+  <a href="#">Services</a>
+  <a href="#">About Us</a>
+  <a href="#">Contact</a>
+  <a href="Order.html" class="order-mobile"><i class="fa fa-shopping-cart"> Order</i></a>
+</nav>
+
+ <nav class="nav-links">
+  <a href="#">Home</a>
+  <a href="#">Services</a>
+  <a href="#">About Us</a>
+  <a href="#">Contact</a>
+</nav>
+
+
+  <!-- Order icon on desktop -->
+  <div class="order-symbol">
+    <a href="Order.html"><i class="fa fa-shopping-cart"></i></a>
+  </div>
+
+  <!-- Hamburger -->
+<div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+</header>
+
+
+
+<section class="categoriee">
 
   <!-- SHAWARMA -->
- <div class="category-card" data-target="shawarma">
-  <i class="fa fa-leaf"></i>
-  <span>Shawarma</span>
-</div>
-
-  <div id="shawarma" class="items grid">
-    <div class="item-card">
-      <img src="images/beef-shawarma.jpg" alt="Beef Shawarma">
-      <p>Beef Shawarma</p>
-    </div>
-    <div class="item-card">
-      <img src="images/chicken-shawarma.jpg" alt="Chicken Shawarma">
-      <p>Chicken Shawarma</p>
-    </div>
-    <div class="item-card">
-      <img src="images/mix-shawarma.jpg" alt="Mix Shawarma">
-      <p>Mix Shawarma</p>
-    </div>
-    <div class="item-card">
-      <img src="images/full-protein-shawarma.jpg" alt="Full Protein Shawarma">
-      <p>Full Protein Shawarma</p>
-    </div>
-    <div class="item-card">
-      <img src="images/jumbo-shawarma.jpg" alt="Jumbo Shawarma">
-      <p>Jumbo Shawarma </p>
+  <div class="category-wrap">
+    <button class="category-btn shawarma-btn" data-desc="shawarma-info">
+      <i class="fa fa-leaf"></i>
+      <span>Shawarma</span>
+    </button>
+    <div class="category-info" id="shawarma-info">
+      <h4>Shawarma</h4>
+      <p>Freshly grilled beef, chicken, or mixed shawarma wrapped
+         in warm flatbread and layered with crisp vegetables, 
+         creamy sauces, and bold spices. Each bite is juicy, smoky, 
+         and satisfying — perfect for a quick meal or a full-on craving fix.</p>
     </div>
   </div>
 
-  <!-- GRILLS & BBQ -->
-  <div class="category-card" data-target="grills">
-    <i class="fa fa-fire"></i>
-    <span>Grills & BBQ</span>
-  </div>
-  <div id="grills" class="items grid">
-    <div class="item-card">
-      <img src="images/grilled-snails.jpg" alt="Grilled Snails">
-      <p>Grilled Snails </p>
-    </div>
-
-    <div class="item-card">
-      <img src="images/snails-fries.jpg" alt="Grilled Snails">
-      <p>Grilled Snails and fries</p>
-    </div>
-
-    <div class="item-card">
-      <img src="images/Asun-fries.jpg" alt="Asun">
-      <p>Loaded Asun with fries</p>
-    </div>
-
-     <div class="item-card">
-      <img src="images/asun.jpg" alt="Asun">
-      <p>Asun</p>
-    </div>
-
-
-     <div class="item-card">
-      <img src="images/grilled-pwrans.jpg" alt="Asun">
-      <p>Amazing Grilled Shrimp</p>
+  <!-- GRILLS -->
+  <div class="category-wrap">
+    <button class="category-btn grills-btn" data-desc="grills-info">
+      <i class="fa fa-fire"></i>
+      <span>Grills & BBQ</span>
+    </button>
+    <div class="category-info" id="grills-info">
+      <h4>Grills & BBQ</h4>
+      <p>A rich selection of flame-grilled meats prepared over open heat to lock in flavor and tenderness.
+         From spicy snails to juicy shrimp and BBQ classics, this category delivers deep smoky taste,
+          bold seasoning, and mouth-watering aroma.</p>
     </div>
   </div>
 
   <!-- PROTEIN & FRIES -->
-  <div class="category-card"  data-target="combos">
-    <i class="fa fa-cutlery"></i>
-    <span>Protein & Fries</span>
-  </div>
-  <div id="combos" class="items grid">
-    <div class="item-card">
-      <img src="images/chicken-fries.jpg" alt="Chicken and Fries">
-      <p>Chicken & Fries </p>
-    </div>
-    <div class="item-card">
-      <img src="images/turkey-fries.jpg" alt="Turkey and Fries">
-      <p>Turkey & Fries </p>
-    </div>
-    <div class="item-card">
-      <img src="images/loaded-beef-fries.jpg" alt="Loaded Beef and Fries">
-      <p>Loaded Beef & Fries </p>
-    </div>
-    <div class="item-card">
-      <img src="images/egg-sauce-fries.jpg" alt="Egg Sauce and Fries">
-      <p>Egg Sauce & Fries </p>
+  <div class="category-wrap">
+    <button class="category-btn protein-btn" data-desc="protein-info">
+      <i class="fa fa-cutlery"></i>
+      <span>Protein & Fries</span>
+    </button>
+    <div class="category-info" id="protein-info">
+      <h4>Protein & Fries</h4>
+      <p>Golden crispy fries served with generous portions of protein including chicken,
+         turkey, beef, or egg sauce. Comfort food done right — filling, flavorful,
+          and perfect for lunch, dinner, or late-night cravings.</p>
     </div>
   </div>
 
   <!-- GRILLED FISH -->
-  <div class="category-card"  data-target="fish">
-    <i class="fa fa-anchor"></i>
-    <span>Grilled Fish</span>
+  <div class="category-wrap">
+    <button class="category-btn fish-btn" data-desc="fish-info">
+      <i class="fa fa-anchor"></i>
+      <span>Grilled Fish</span>
+    </button>
+    <div class="category-info" id="fish-info">
+      <h4>Grilled Fish</h4>
+      <p>Expertly seasoned and grilled fish cooked to perfection with a crispy outer layer and tender, juicy inside.
+         From catfish to tilapia and croaker, each dish is infused with rich spices and grilled for maximum flavor.</p>
+    </div>
   </div>
-  <div id="fish" class="items grid">
+
+  <!-- LOADED FRIES -->
+  <div class="category-wrap">
+    <button class="category-btn fries-btn" data-desc="fries-info">
+      <i class="fa fa-star"></i>
+      <span>Loaded Chinese Fries</span>
+    </button>
+    <div class="category-info" id="fries-info">
+      <h4>Loaded Chinese Fries</h4>
+      <p>A delicious fusion of crispy fries tossed with Chinese-style sauces, vegetables, and protein toppings. 
+        Packed with flavor, color, and texture — every serving is rich, satisfying, and unforgettable.</p>
+    </div>
+  </div>
+
+</section>
+
+
+
+<section class="categories">
+  <h2>Choose a Category</h2>
+
+  <!-- CATEGORY ROW -->
+  <div class="category-row">
+    <div class="category-card" data-target="shawarma">
+      <i class="fa fa-leaf"></i>
+      <span>Shawarma</span>
+    </div>
+
+    <div class="category-card" data-target="grills">
+      <i class="fa fa-fire"></i>
+      <span>Grills & BBQ</span>
+    </div>
+
+    <div class="category-card" data-target="combos">
+      <i class="fa fa-cutlery"></i>
+      <span>Protein & Fries</span>
+    </div>
+
+    <div class="category-card" data-target="fish">
+      <i class="fa fa-anchor"></i>
+      <span>Grilled Fish</span>
+    </div>
+
+    <div class="category-card" data-target="loadedfries">
+      <i class="fa fa-star"></i>
+      <span>Loaded Fries</span>
+    </div>
+  </div>
+
+
+
+  <!-- CATEGORY ITEMS -->
+
+
+  <!-- SHAWARMA -->
+  <div id="shawarma" class="items">
+  <div class="grid">
     <div class="item-card">
-      <img src="images/grilled-catfish.jpg" alt="Grilled Catfish">
+      <img src="images/beef-shawarma.jpg" alt="Beef Shawarma">
+      <p>Beef Shawarma</p>
+    </div>
+
+    <div class="item-card">
+      <img src="images/chicken-shawarma.jpg" alt="Chicken Shawarma">
+      <p>Chicken Shawarma</p>
+    </div>
+
+    <div class="item-card">
+      <img src="images/mix-shawarma.jpg" alt="Mix Shawarma">
+      <p>Mix Shawarma</p>
+    </div>
+
+    <div class="item-card">
+      <img src="images/full-protein-shawarma.jpg" alt="Full Protein">
+      <p>Full Protein</p>
+    </div>
+
+    <div class="item-card">
+      <img src="images/jumbo-shawarma.jpg" alt="Jumbo Shawarma">
+      <p>Jumbo Shawarma</p>
+    </div>
+  </div>
+</div>
+
+ <!-- GRILLS & BBQ -->
+   <div id="grills" class="items">
+  <div class="grid">
+    <div class="item-card">
+      <img src="images/grilled-snails.jpg" alt="Grilled Snails">
+      <p>Grilled Snails</p>
+    </div>
+
+    <div class="item-card">
+      <img src="images/snails-fries.jpg" alt="Snails & Fries">
+      <p>Snails & Fries</p>
+    </div>
+
+    <div class="item-card">
+      <img src="images/Asun-fries.jpg" alt="Loaded Asun">
+      <p>Loaded Asun</p>
+    </div>
+
+    <div class="item-card">
+      <img src="images/asun.jpg" alt="Asun">
+      <p>Asun</p>
+    </div>
+
+    <div class="item-card">
+      <img src="images/grilled-pwrans.jpg" alt="Grilled Shrimp">
+      <p>Grilled Shrimp</p>
+    </div>
+  </div>
+</div>
+
+<!-- PROTEIN & FRIES -->
+ <div id="combos" class="items">
+  <div class="grid">
+    <div class="item-card">
+      <img src="images/chicken-fries.jpg" alt="Chicken & Fries">
+      <p>Chicken & Fries</p>
+    </div>
+
+    <div class="item-card">
+      <img src="images/turkey-fries.jpg" alt="Turkey & Fries">
+      <p>Turkey & Fries</p>
+    </div>
+
+    <div class="item-card">
+      <img src="images/loaded-beef-fries.jpg" alt="Loaded Beef">
+      <p>Loaded Beef & Fries</p>
+    </div>
+
+    <div class="item-card">
+      <img src="images/egg-sauce-fries.jpg" alt="Egg Sauce">
+      <p>Egg Sauce & Fries</p>
+    </div>
+  </div>
+</div>
+
+<!-- GRILLED FISH -->
+<div id="fish" class="items">
+  <div class="grid">
+    <div class="item-card">
+      <img src="images/grilled-catfish.jpg" alt="Catfish">
       <p>Grilled Catfish</p>
     </div>
+
     <div class="item-card">
-      <img src="images/Chicken Skewers.jpg" alt="Large Grilled Catfish">
+      <img src="images/Chicken Skewers.jpg" alt="Chicken Skewers">
       <p>Chicken Skewers</p>
     </div>
-    <div class="item-card">
-      <img src="images/grilled-croaker.jpg" alt="Grilled Croaker">
-      <p>Grilled Croaker </p>
-    </div>
-    <div class="item-card">
-      <img src="images/grilled-tilapia.jpg" alt="Grilled Tilapia">
-      <p>Grilled Tilapia </p>
-    </div>
-  </div>
 
-  <!-- LOADED CHINESE FRIES -->
-  <div class="category-card"  data-target="loadedfries">
-    <i class="fa fa-star"></i>
-    <span>Loaded Chinese Fries</span>
+    <div class="item-card">
+      <img src="images/grilled-croaker.jpg" alt="Croaker">
+      <p>Grilled Croaker</p>
+    </div>
+
+    <div class="item-card">
+      <img src="images/grilled-tilapia.jpg" alt="Tilapia">
+      <p>Grilled Tilapia</p>
+    </div>
   </div>
-  <div id="loadedfries" class="items grid">
+</div>
+
+<!-- LOADED CHINESE FRIES -->
+ <div id="loadedfries" class="items">
+  <div class="grid">
     <div class="item-card">
       <img src="images/mini-loaded-fries.jpg" alt="Mini Loaded Fries">
-      <p>Mini Loaded Chinese Fries</p>
+      <p>Mini Loaded Fries</p>
     </div>
+
     <div class="item-card">
-      <img src="images/mix-mini-loaded-fries.jpg" alt="Mix Mini Loaded Fries">
-      <p>Mix Mini Loaded Chinese Fries </p>
+      <img src="images/mix-mini-loaded-fries.jpg" alt="Mix Mini">
+      <p>Mix Mini Loaded</p>
     </div>
+
     <div class="item-card">
-      <img src="images/supreme-loaded-fries.jpg" alt="Supreme Loaded Fries">
-      <p>Supreme Loaded Chinese Fries</p>
+      <img src="images/supreme-loaded-fries.jpg" alt="Supreme">
+      <p>Supreme Loaded</p>
     </div>
+
     <div class="item-card">
-      <img src="images/mix-supreme-loaded-fries.jpg" alt="Mix Supreme Loaded Fries">
-      <p>Mix Supreme Loaded Chinese Fries</p>
+      <img src="images/mix-supreme-loaded-fries.jpg" alt="Mix Supreme">
+      <p>Mix Supreme</p>
     </div>
   </div>
+</div>
+
 </section>
 
-<section class="orders">
-    <a href="Order.html">Order Now</a>
-</section>
+
 
 <!-- Customer Care Floating Button -->
 <div class="customer-care">
@@ -181,121 +327,10 @@
     <a href="https://www.facebook.com/profile.php?id=100083109267401&mibextid=ZbWKwL" target="_blank" class="social-icon facebook"><i class="fa fa-facebook"></i></a>
     <a href="https://www.instagram.com/homagrills?igsh=MWU2a21lamM0cW5pOA==" target="_blank" class="social-icon instagram"><i class="fa fa-instagram"></i></a>
     <a href="https://wa.me/2347035107709" target="_blank" class="social-icon whatsapp"><i class="fa fa-whatsapp"></i></a>
-  </footer>
+  </footer> -->
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const categoryCards = document.querySelectorAll('.category-card');
-  const itemsSections = document.querySelectorAll('.items');
-
-  // Ensure all sections are closed on page load
-  itemsSections.forEach(section => section.style.display = 'none');
-
-  // Add click listener to each category card
-  categoryCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const targetId = card.getAttribute('data-target');
-      const targetSection = document.getElementById(targetId);
-
-      // Close all other sections
-      itemsSections.forEach(section => {
-        if (section !== targetSection) section.style.display = 'none';
-      });
-
-      // Toggle clicked section
-      targetSection.style.display = (targetSection.style.display === 'flex') ? 'none' : 'flex';
-    });
-  });
-});
-
-
-
-// ----------------------------
-// CUSTOMER CARE WIDGET
-// ----------------------------
-const careBtn = document.getElementById("careBtn");
-const careOptions = document.getElementById("careOptions");
-const careForm = document.getElementById("careForm");
-const formTitle = document.getElementById("formTitle");
-const submitCare = document.getElementById("submitCare");
-const cancelCare = document.getElementById("cancelCare");
-
-let selectedType = "";
-
-careBtn.addEventListener("click", () => {
-  careOptions.classList.toggle("hidden");
-  careForm.classList.add("hidden");
-
-  // 🛑 Stop blinking after first click
-  careBtn.style.animation = "none";
-});
-
-document.querySelectorAll(".option-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    selectedType = btn.dataset.type; // "Complain" or "Review"
-    formTitle.innerText = `${selectedType} Form`;
-    careOptions.classList.add("hidden");
-    careForm.classList.remove("hidden");
-  });
-});
-
-cancelCare.addEventListener("click", () => {
-  careForm.classList.add("hidden");
-
-  // ✅ Resume blinking when user cancels
-  careBtn.style.animation = "blinkPulse 1.5s infinite";
-});
-submitCare.addEventListener("click", (event) => {
-  event.preventDefault(); // 🚫 Stop form from refreshing the page
-
-  const email = document.getElementById("careEmail").value.trim();
-  const message = document.getElementById("careMessage").value.trim();
-
-  if (!email || !message) {
-    alert("Please fill in all fields.");
-    return;
-  }
-
-  // ✅ Subject now only shows the selected type ("Complain" or "Review")
-  const subject = selectedType;
-
-  // ✅ Email body includes user's email and message
-  const body = `${message}`;
-
-  // Open default email app
-  const mailto = `mailto:homagrills@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  window.location.href = mailto;
-
-  // Reset form
-  document.getElementById("careEmail").value = "";
-  document.getElementById("careMessage").value = "";
-  careForm.classList.add("hidden");
-
-  // ✅ Resume blinking after submit
-  careBtn.style.animation = "blinkPulse 1.5s infinite";
-});
-
-
-  function toggleItems(id) {
-    const section = document.getElementById(id);
-
-    // Check current state
-    const isOpen = section.style.display === "flex";
-
-    // Close all sections first
-    document.querySelectorAll('.items').forEach(item => {
-      item.style.display = "none";
-    });
-
-    // If it was closed, open it
-    if (!isOpen) {
-      section.style.display = "flex";
-    }
-  }
-
+<script src="script.js">
 </script>
-
-
 
 </body>
 </html>
