@@ -4,16 +4,22 @@ const items = document.querySelectorAll(".items");
 categories.forEach(category => {
   category.addEventListener("click", () => {
     const target = category.dataset.target;
+    const targetItems = document.getElementById(target);
 
-    // reset
+    const isActive = category.classList.contains("active");
+
+    // Close everything first
     categories.forEach(c => c.classList.remove("active"));
     items.forEach(i => i.classList.remove("active"));
 
-    // activate
-    category.classList.add("active");
-    document.getElementById(target).classList.add("active");
+    // Toggle behavior
+    if (!isActive) {
+      category.classList.add("active");
+      targetItems.classList.add("active");
+    }
   });
 });
+
 
 const hamburger = document.getElementById("hamburger");
 const mobileNav = document.getElementById("mobileNav");
