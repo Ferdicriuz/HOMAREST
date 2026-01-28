@@ -286,60 +286,109 @@ align-items: center;
   line-height: 1.5;
 }
 
-
-/* ----------------------------
-   SOCIAL LINKS
------------------------------ */
-.social-links {
-  width: 100vw;
-  height: auto;
-  background-color: #ffffff54;
-  text-align: center;
-  padding: 10px 0;
-  animation: slideUp 1s ease;
+.close-desc {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #ff6600;
+  color: #fff;
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-.social-links h3 {
-  color: #e4570a;
-  margin-bottom: 5px;
+/* Hover / tap feedback */
+.close-desc:hover {
+  background: #e65c00;
+}
+.category-info.show {
+  padding-bottom: 4.5rem; /* space for close button */
+}
+
+
+.footer {
+  background: #000;
+  color: #fff;
+  padding: 3rem 2rem 1rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-box {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-box h3 {
+  color: #ff6600;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.footer-box p, .ema{
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-box i {
+  margin-right: 1rem;
+
+}
+
+/* Social Icons */
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
 }
 
 .social-icon {
-  display: inline-block;
-  margin: 0 10px;
-  font-size: 22px;
-  color: #fff;
   width: 40px;
   height: 40px;
+  background: #111;
   border-radius: 50%;
-  line-height: 40px;
-  text-align: center;
-  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.6rem;
+  transition: transform 0.3s, background 0.3s;
 }
-
-.social-icon.facebook { background-color: #3b5998; }
-.social-icon.instagram { background-color: #e4405f; }
-.social-icon.whatsapp { background-color: #25d366; }
 
 .social-icon:hover {
-  transform: scale(1.1);
-  opacity: 0.9;
+  transform: translateY(-5px);
 }
 
-.delivery-select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  cursor: pointer;
+.facebook { color: #1877f2; font-size: 2rem; text-decoration: none;}
+.instagram { color: #e1306c;font-size: 2rem; text-decoration: none;}
+.whatsapp { color: #25d366; font-size: 2rem; text-decoration: none;}
+
+/* Bottom */
+.footer-bottom {
+  border-top: 1px solid #222;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #aaa;
 }
-.delivery-select:focus {
-  border-color: #25d366;
-  outline: none;
-}
+
+
+
 /* ----------------------------
    CUSTOMER CARE FLOATING WIDGET
 ----------------------------- */
@@ -513,6 +562,15 @@ display: flex;
     display: inline;
     font-size: 1.6rem;
     color: #ff6600;
+  }
+
+    .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
   }
 }
 

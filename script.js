@@ -40,6 +40,8 @@ mobileNav.querySelectorAll("a").forEach(link => {
 });
 
 
+
+
 const categoryBtns = document.querySelectorAll(".category-btn");
 let autoCloseTimer = null;
 
@@ -78,6 +80,28 @@ categoryBtns.forEach(btn => {
   });
 });
 
+const closeBtns = document.querySelectorAll(".close-desc");
+
+closeBtns.forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    // Clear timer
+    if (autoCloseTimer) {
+      clearTimeout(autoCloseTimer);
+      autoCloseTimer = null;
+    }
+
+    // 🔥 CLOSE EVERYTHING
+    document.querySelectorAll(".category-wrap").forEach(wrap => {
+      wrap.classList.remove("expanded");
+    });
+
+    document.querySelectorAll(".category-info").forEach(info => {
+      info.classList.remove("show");
+    });
+  });
+});
 
 
 // ----------------------------
