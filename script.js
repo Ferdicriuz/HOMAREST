@@ -21,6 +21,7 @@ categories.forEach(category => {
 });
 
 
+
 const hamburger = document.getElementById("hamburger");
 const mobileNav = document.getElementById("mobileNav");
 const closeMenu = document.getElementById("closeMenu");
