@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homagrills</title>
+  <link rel="icon" type="image/x-icon" href="/images/homalogo.jpg">
+    <link rel="stylesheet" href="styling.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+    <header class="navbar">
+  <!-- Logo -->
+  <div class="logo">
+    <img src="WhatsApp Image 2025-10-23 at 03.30.14_f75b7695.jpg" alt="Restaurant Logo" />
+  </div>
+
+  <!-- Navigation Links -->
+  <nav class="mobile-nav" id="mobileNav">
+  <button class="close-menu" id="closeMenu">&times;</button>
+  <a href="index.html">Home</a>
+  <a href="services.html">Our Services</a>
+  <a href="#">About Us</a>
+  <a href="#">Contact</a>
+  <a href="Order.html" class="order-mobile"><i class="fa fa-shopping-cart"> Order</i></a>
+</nav>
+
+ <nav class="nav-links">
+  <a href="index.html">Home</a>
+  <a href="services.html"  class="page">Our Services</a>
+  <a href="#">About Us</a>
+  <a href="#">Contact</a>
+</nav>
+
+
+  <!-- Order icon on desktop -->
+  <div class="order-symbol">
+    <a href="Order.html"><i class="fa fa-shopping-cart"></i></a>
+  </div>
+
+  <!-- Hamburger -->
+<div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+</header>
+    <section class="services">
+  <h2>Our Services</h2>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <img src="images/events.jpg" alt="Events Service">
+      <h3>Events</h3>
+      <p>Weddings, parties, and corporate events.</p>
+      <button onclick="bookService('Events')">Book Now</button>
+    </div>
+
+    <div class="service-card">
+      <img src="images/delivery.jpg" alt="Delivery Service">
+      <h3>Deliveries</h3>
+      <p>Fast and reliable delivery services.</p>
+      <button onclick="bookService('Deliveries')">Book Now</button>
+    </div>
+
+    <div class="service-card">
+      <img src="images/outdoors.jpg" alt="Outdoor Service">
+      <h3>Outdoors</h3>
+      <p>Outdoor setups and assistance.</p>
+      <button onclick="bookService('Outdoors')">Book Now</button>
+    </div>
+
+    <div class="service-card">
+      <img src="images/home-services.jpg" alt="Home Services">
+      <h3>Home Services</h3>
+      <p>Cleaning, repairs, and home support.</p>
+      <button onclick="bookService('Home Services')">Book Now</button>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Customer Care Floating Button -->
+<div class="customer-care">
+  <button id="careBtn">💬</button>
+  <div id="careOptions" class="care-options hidden">
+    <button class="option-btn" data-type="Complain">😠 Complain</button>
+    <button class="option-btn" data-type="Review">⭐ Review</button>
+  </div>
+
+  <div id="careForm" class="care-form hidden">
+    <h3 id="formTitle"></h3>
+    <input type="email" id="careEmail" placeholder="Your Email" required />
+    <textarea id="careMessage" placeholder="Write your message..." required></textarea>
+    <button id="submitCare" type="button">📩 Submit</button>
+    <button id="cancelCare">❌ Cancel</button>
+  </div>
+</div>
+
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Brand / About -->
+    <div class="footer-box">
+      <h3>Homa Grills</h3>
+      <p>
+        Serving delicious shawarma, grills & BBQ made fresh with love.
+        Taste the flavor. Feel the fire 🔥
+      </p>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-box">
+      <h3>Contact Us</h3>
+      <p><i class="fa fa-phone"></i> +234 703 510 7709</p>
+      <p><i class="fa fa-envelope"></i><a href="mailto:homagrills@gmail.com" class="ema">homagrills@gmail.com</a></p>
+      <p><i class="fa fa-map-marker"></i> Port Harcourt, Nigeria</p>
+    </div>
+
+    <!-- Social Links -->
+    <div class="footer-box">
+      <h3>Follow Us</h3>
+      <div class="social-links">
+        <a href="https://www.facebook.com/profile.php?id=100083109267401" target="_blank" class="social-icon facebook">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a href="https://www.instagram.com/homagrills" target="_blank" class="social-icon instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/2347035107709" target="_blank" class="social-icon whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <p>© 2025 Homa Grills. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  function bookService(serviceName) {
+    const phoneNumber = "234XXXXXXXXXX"; // your WhatsApp number
+    const message = `Hello, I want to book your ${serviceName} service.`;
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  }
+</script>
+
+
+</body>
+</html>
