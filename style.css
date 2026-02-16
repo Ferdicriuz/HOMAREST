@@ -151,7 +151,7 @@ input, textarea, select {
 ----------------------------- */
 .social-links {
   width: 100vw;
-  background-color: #ffffff54;
+  background-color: hsla(0, 0%, 0%, 0.747);
   text-align: center;
   padding: 10px 0;
   animation: slideUp 1s ease;
@@ -167,22 +167,19 @@ input, textarea, select {
   margin: 0 10px;
   font-size: 22px;
   color: #fff;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
   line-height: 40px;
   text-align: center;
   transition: transform 0.2s ease;
 }
 
-.social-icon.facebook { background-color: #3b5998; }
-.social-icon.instagram { background-color: #e4405f; }
-.social-icon.whatsapp { background-color: #25d366; }
-
 .social-icon:hover {
-  transform: scale(1.1);
-  opacity: 0.9;
+  transform: translateY(-5px);
 }
+
+.facebook { color: #1877f2; font-size: 2rem; text-decoration: none;}
+.instagram { color: #e1306c;font-size: 2rem; text-decoration: none;}
+.whatsapp { color: #25d366; font-size: 2rem; text-decoration: none;}
+
 
 .delivery-select {
   width: 100%;
