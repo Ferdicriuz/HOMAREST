@@ -654,7 +654,7 @@ display: flex;
   }
 
   .service-card img {
-    height: 50vh; /* shrink images on mobile */
+    height: 55rem; /* shrink images on mobile */
   }
 
   .service-content button {
@@ -670,7 +670,7 @@ display: flex;
   }
 
   .service-card img {
-    height: 300px; /* adjust for mobile view */
+    height: 55rem; /* adjust for mobile view */
   }
 
 }
