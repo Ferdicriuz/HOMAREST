@@ -509,12 +509,13 @@ align-items: center;
 
 .services {
   padding: 60px 20px;
-  background: #f9f9f9;
+  background: #f9f9f975;
   text-align: center;
 }
 
 .services h2 {
   font-size: 2rem;
+  color: white;
   margin-bottom: 35px;
 }
 .services-grid {
