@@ -13,13 +13,14 @@ const MENU = [
   { id: 12, name: "Grilled Catfish 🐟", price: 10000, desc: "Garnished, fries, ketchup, salad" },
   { id: 13, name: "Grilled Catfish 🐟", price: 12000, desc: "Garnished, fries, ketchup, salad" },
   { id: 14, name: "Grilled Croaker 🐠", price: 15000, desc: "Garnished, fries, ketchup, salad" },
-  { id: 15, name: "Grilled Tilapia 🐡", price: 15000, desc: "Garnished, fries, ketchup, salad" },
-  { id: 16, name: "Mini-Loaded Chinese Fries 🍟", price: 6000, desc: "Loaded with toppings and protein (chicken or beef)" },
-  { id: 17, name: "Mix-Mini-Loaded Chinese Fries 🍟", price: 8000, desc: "Loaded with toppings, chicken and beef" },
-  { id: 18, name: "Supreme-Loaded Chinese Fries 🍟", price: 10000, desc: "Fully loaded with protein, sausage, toppings" },
-  { id: 19, name: "Mix-Supreme-Loaded Chinese Fries 🍟", price: 15000, desc: "Fully loaded and garnished with protein, sausage, toppings" },
-  { id: 20, name: "Loaded Beef and Fries 🥩🍟", price: 8000, desc: "Fully loaded with Beef, sausage, toppings, fries, salad" },
-  { id: 21, name: "Loaded Egg-Sauce and Fries 🍳🍟", price: 6000, desc: "Egg sauce, Beef-toppings fries, ketchup" },
+  { id: 15, name: "Grilled Croaker 🐠", price: 18000, desc: "Garnished, fries, ketchup, salad" },
+  { id: 16, name: "Grilled Tilapia 🐡", price: 15000, desc: "Garnished, fries, ketchup, salad" },
+  { id: 17, name: "Mini-Loaded Chinese Fries 🍟", price: 6000, desc: "Loaded with toppings and protein (chicken or beef)" },
+  { id: 18, name: "Mix-Mini-Loaded Chinese Fries 🍟", price: 8000, desc: "Loaded with toppings, chicken and beef" },
+  { id: 19, name: "Supreme-Loaded Chinese Fries 🍟", price: 10000, desc: "Fully loaded with protein, sausage, toppings" },
+  { id: 20, name: "Mix-Supreme-Loaded Chinese Fries 🍟", price: 15000, desc: "Fully loaded and garnished with protein, sausage, toppings" },
+  { id: 21, name: "Loaded Beef and Fries 🥩🍟", price: 8000, desc: "Fully loaded with Beef, sausage, toppings, fries, salad" },
+  { id: 22, name: "Loaded Egg-Sauce and Fries 🍳🍟", price: 6000, desc: "Egg sauce, Beef-toppings fries, ketchup" },
 ];
 
 let cart = [];
