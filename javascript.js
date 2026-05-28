@@ -157,7 +157,7 @@ document.getElementById("checkout").addEventListener("click", () => {
 
   if (delivery === "within") {
     total += 1000;
-    deliveryText = "🚚 Delivery within Eagle Island (₦1000)";
+    deliveryText = "🚚 Delivery within Eagle Island (₦1500)";
   } else if (delivery === "outside") {
     deliveryText = "🚛 Delivery outside Eagle Island (negotiable)";
   } else if (delivery === "none") {
