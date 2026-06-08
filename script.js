@@ -1,25 +1,24 @@
 const categories = document.querySelectorAll(".category-card");
-const items = document.querySelectorAll(".items");
+const sections = document.querySelectorAll(".items");
 
 categories.forEach(category => {
   category.addEventListener("click", () => {
-    const target = category.dataset.target;
-    const targetItems = document.getElementById(target);
 
-    const isActive = category.classList.contains("active");
+    categories.forEach(c =>
+      c.classList.remove("active")
+    );
 
-    // Close everything first
-    categories.forEach(c => c.classList.remove("active"));
-    items.forEach(i => i.classList.remove("active"));
+    sections.forEach(section =>
+      section.classList.remove("active")
+    );
 
-    // Toggle behavior
-    if (!isActive) {
-      category.classList.add("active");
-      targetItems.classList.add("active");
-    }
+    category.classList.add("active");
+
+    document
+      .getElementById(category.dataset.target)
+      .classList.add("active");
   });
 });
-
 
 
 const hamburger = document.getElementById("hamburger");

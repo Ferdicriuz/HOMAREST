@@ -114,6 +114,71 @@ body.scrolled .logo img {
   align-items: center;
 }
 
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #111;
+  color: #fff;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+}
+
+.menu-img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.menu-details {
+  flex: 1;
+}
+
+.menu-item button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.menu {
+  max-height: 550px;
+  overflow-y: auto;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  background: #111;
+  color: #fff;
+}
+
+.menu-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.menu-details {
+  flex: 1;
+}
+
+.menu::-webkit-scrollbar {
+  width: 8px;
+}
+
+.menu::-webkit-scrollbar-thumb {
+  background: #ff6600;
+  border-radius: 10px;
+}
 /* ----------------------------
    BUTTONS & INPUTS
 ----------------------------- */

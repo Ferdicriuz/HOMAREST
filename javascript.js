@@ -1,44 +1,175 @@
+
 const MENU = [
-  { id: 1, name: "Beef Shawarma 🌯", price: 3500, desc: "Beef, veg, juice (Two sausages)" },
-  { id: 2, name: "Chicken Shawarma 🌯", price: 3500, desc: "Chicken, veg, juice (Two sausages)" },
-  { id: 3, name: "Mix Shawarma 🌯", price: 4000, desc: "Beef, Chicken, veg, juice (Two sausages)" },
-  { id: 4, name: "Full Protein Shawarma 🌯", price: 5500, desc: "Beef, Chicken, Mix (Two sausages)" },
-  { id: 5, name: "Jumbo Shawarma 🌯🔥", price: 6000, desc: "Beef, Chicken, Mix (Three sausages)" },
-  { id: 6, name: "Grilled Snails 🐌", price: 5000, desc: "Garnished snail, fries with seasoning" },
-  { id: 7, name: "Asun 🐐🔥", price: 4000, desc: "Grilled Goat meat" },
-  { id: 8, name: "Chicken and Fries 🍗🍟", price: 5000, desc: "Chicken, chips, salad" },
-  { id: 9, name: "Chicken and Fries 🍗🍟", price: 7000, desc: "Chicken, chips, salad" },
-  { id: 10, name: "Chicken wings and Fries 🍗🍟", price: 10000, desc: "Chicken, chips, salad" },
-  { id: 11, name: "Turkey and Fries 🦃🍟", price: 8000, desc: "Turkey, chips, salad" },
-  { id: 12, name: "Grilled Catfish 🐟", price: 10000, desc: "Garnished, fries, ketchup, salad" },
-  { id: 13, name: "Grilled Catfish 🐟", price: 12000, desc: "Garnished, fries, ketchup, salad" },
-  { id: 14, name: "Grilled Croaker 🐠", price: 15000, desc: "Garnished, fries, ketchup, salad" },
-  { id: 15, name: "Grilled Croaker 🐠", price: 18000, desc: "Garnished, fries, ketchup, salad" },
-  { id: 16, name: "Grilled Tilapia 🐡", price: 15000, desc: "Garnished, fries, ketchup, salad" },
-  { id: 17, name: "Mini-Loaded Chinese Fries 🍟", price: 6000, desc: "Loaded with toppings and protein (chicken or beef)" },
-  { id: 18, name: "Mix-Mini-Loaded Chinese Fries 🍟", price: 8000, desc: "Loaded with toppings, chicken and beef" },
-  { id: 19, name: "Supreme-Loaded Chinese Fries 🍟", price: 10000, desc: "Fully loaded with protein, sausage, toppings" },
-  { id: 20, name: "Mix-Supreme-Loaded Chinese Fries 🍟", price: 15000, desc: "Fully loaded and garnished with protein, sausage, toppings" },
-  { id: 21, name: "Loaded Beef and Fries 🥩🍟", price: 8000, desc: "Fully loaded with Beef, sausage, toppings, fries, salad" },
-  { id: 22, name: "Loaded Egg-Sauce and Fries 🍳🍟", price: 6000, desc: "Egg sauce, Beef-toppings fries, ketchup" },
+  {
+    id: 1,
+    name: "Beef Shawarma 🌯",
+    price: 3500,
+    desc: "Beef, veg, juice (Two sausages)",
+    image: "images/beef-shawarma.jpg"
+  },
+  {
+    id: 2,
+    name: "Chicken Shawarma 🌯",
+    price: 3500,
+    desc: "Chicken, veg, juice (Two sausages)",
+    image: "images/chicken-shawarma.jpg"
+  },
+  {
+    id: 3,
+    name: "Mix Shawarma 🌯",
+    price: 4000,
+    desc: "Beef, Chicken, veg, juice (Two sausages)",
+    image: "images/mix-shawarma.jpg"
+  },
+  {
+    id: 4,
+    name: "Full Protein Shawarma 🌯",
+    price: 5500,
+    desc: "Beef, Chicken, Mix (Two sausages)",
+    image: "images/full-protein-shawarma.jpg"
+  },
+  {
+    id: 5,
+    name: "Jumbo Shawarma 🌯🔥",
+    price: 6000,
+    desc: "Beef, Chicken, Mix (Three sausages)",
+    image: "images/jumbo-shawarma.jpg"
+  },
+  {
+    id: 6,
+    name: "Grilled Snails 🐌",
+    price: 5000,
+    desc: "Garnished snail, fries with seasoning",
+    image: "images/grilled-snails.jpg"
+  },
+  {
+    id: 7,
+    name: "Asun 🐐🔥",
+    price: 4000,
+    desc: "Grilled Goat meat",
+    image: "images/asun.jpg"
+  },
+  {
+    id: 8,
+    name: "Chicken and Fries 🍗🍟",
+    price: 5000,
+    desc: "Chicken, chips, salad",
+    image: "images/chicken-fries.jpg"
+  },
+  {
+    id: 9,
+    name: "Chicken and Fries 🍗🍟",
+    price: 7000,
+    desc: "Chicken, chips, salad",
+    image: "images/chicken-fries.jpg"
+  },
+  {
+    id: 10,
+    name: "Chicken Wings and Fries 🍗🍟",
+    price: 10000,
+    desc: "Chicken, chips, salad",
+    image: "images/Chicken Skewers.jpg"
+  },
+  {
+    id: 11,
+    name: "Turkey and Fries 🦃🍟",
+    price: 8000,
+    desc: "Turkey, chips, salad",
+    image: "images/turkey-fries.jpg"
+  },
+  {
+    id: 12,
+    name: "Grilled Catfish 🐟",
+    price: 10000,
+    desc: "Garnished, fries, ketchup, salad",
+    image: "images/grilled-catfish.jpg"
+  },
+  {
+    id: 13,
+    name: "Grilled Catfish 🐟",
+    price: 12000,
+    desc: "Garnished, fries, ketchup, salad",
+    image: "images/grilled-catfish.jpg"
+  },
+  {
+    id: 14,
+    name: "Grilled Croaker 🐠",
+    price: 15000,
+    desc: "Garnished, fries, ketchup, salad",
+    image: "images/grilled-croaker.jpg"
+  },
+  {
+    id: 15,
+    name: "Grilled Croaker 🐠",
+    price: 18000,
+    desc: "Garnished, fries, ketchup, salad",
+    image: "images/grilled-croaker.jpg"
+  },
+  {
+    id: 16,
+    name: "Grilled Tilapia 🐡",
+    price: 15000,
+    desc: "Garnished, fries, ketchup, salad",
+    image: "images/grilled-tilapia.jpg"
+  },
+  {
+    id: 17,
+    name: "Mini-Loaded Chinese Fries 🍟",
+    price: 6000,
+    desc: "Loaded with toppings and protein (chicken or beef)",
+    image: "images/mini-loaded-fries.jpg"
+  },
+  {
+    id: 18,
+    name: "Mix-Mini-Loaded Chinese Fries 🍟",
+    price: 8000,
+    desc: "Loaded with toppings, chicken and beef",
+    image: "images/mix-mini-loaded-fries.jpg"
+  },
+ 
+  {
+    id: 19,
+    name: "Loaded Beef and Fries 🥩🍟",
+    price: 8000,
+    desc: "Fully loaded with Beef, sausage, toppings, fries, salad",
+    image: "images/loaded-beef-fries.jpg"
+  },
+  {
+    id: 20,
+    name: "Loaded Egg-Sauce and Fries 🍳🍟",
+    price: 6000,
+    desc: "Egg sauce, Beef-toppings fries, ketchup",
+    image: "images/egg-sauce-fries.jpg"
+  }
 ];
 
 let cart = [];
 
+
+
 function renderMenu() {
   const menuDiv = document.getElementById("menu");
   menuDiv.innerHTML = "";
+
   MENU.forEach(item => {
     const div = document.createElement("div");
+
     div.className = "menu-item";
+
     div.innerHTML = `
-      <div>
+      <img src="${item.image}" alt="${item.name}" class="menu-img">
+
+      <div class="menu-details">
         <strong>${item.name}</strong><br>
         <small>${item.desc}</small><br>
-         ₦${item.price.toLocaleString()}
+        ₦${item.price.toLocaleString()}
       </div>
-      <button onclick="addToCart(${item.id})">🛒 Add</button>
+
+      <button type="button" onclick="addToCart(${item.id})">
+        🛒 Add
+      </button>
     `;
+
     menuDiv.appendChild(div);
   });
 }
@@ -156,17 +287,35 @@ document.getElementById("checkout").addEventListener("click", () => {
   let total = subtotal;
   let deliveryText = "";
 
-  if (delivery === "within") {
-    total += 1000;
-    deliveryText = "🚚 Delivery within Eagle Island (₦1500)";
-  } else if (delivery === "outside") {
-    deliveryText = "🚛 Delivery outside Eagle Island (negotiable)";
-  } else if (delivery === "none") {
-    deliveryText = "🏃 Pickup by me from store";
-  } else {
-    alert("Please select a delivery option.");
-    return;
-  }
+  const currentHour = Number(
+  new Intl.DateTimeFormat("en-NG", {
+    timeZone: "Africa/Lagos",
+    hour: "numeric",
+    hour12: false
+  }).format(new Date())
+);
+
+if (delivery === "within") {
+
+  const deliveryFee = currentHour >= 19 ? 1500 : 1000;
+
+  total += deliveryFee;
+  deliveryText = `🚚 Delivery within Eagle Island (₦${deliveryFee})`;
+
+} else if (delivery === "outside") {
+
+  deliveryText = "🚛 Delivery outside Eagle Island (negotiable)";
+
+} else if (delivery === "none") {
+
+  deliveryText = "🏃 Pickup by me from store";
+
+} else {
+
+  alert("Please select a delivery option.");
+  return;
+
+}
 
   const message = 
 `🍴 *NEW ORDER ALERT* 🍴
