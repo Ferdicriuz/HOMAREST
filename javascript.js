@@ -295,25 +295,20 @@ document.getElementById("checkout").addEventListener("click", () => {
   }).format(new Date())
 );
 
+
+
 if (delivery === "within") {
 
-  const deliveryFee = currentHour >= 19 ? 1500 : 1000;
+  let deliveryFee;
+
+  if (currentHour >= 20 && currentHour <= 22) {
+    deliveryFee = 1500; // 8 PM - 10 PM
+  } else {
+    deliveryFee = 1000; // 3 PM - 7:59 PM
+  }
 
   total += deliveryFee;
   deliveryText = `🚚 Delivery within Eagle Island (₦${deliveryFee})`;
-
-} else if (delivery === "outside") {
-
-  deliveryText = "🚛 Delivery outside Eagle Island (negotiable)";
-
-} else if (delivery === "none") {
-
-  deliveryText = "🏃 Pickup by me from store";
-
-} else {
-
-  alert("Please select a delivery option.");
-  return;
 
 }
 
@@ -475,3 +470,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
+
