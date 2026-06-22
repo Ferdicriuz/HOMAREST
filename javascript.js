@@ -304,7 +304,7 @@ if (delivery === "within") {
   if (currentHour >= 20 && currentHour <= 22) {
     deliveryFee = 1500; // 8 PM - 10 PM
   } else {
-    deliveryFee = 1000; // 3 PM - 7:59 PM
+    deliveryFee = 1500; // 3 PM - 7:59 PM
   }
 
   total += deliveryFee;
